@@ -11,6 +11,7 @@
     "react-compound-slider": "^2.5.0",
     "react-dom": "^16.13.1",
     "react-numeric-input": "^2.2.3",
+    "react-rangeslider": "^2.2.0",
     "react-scripts": "3.4.1",
     "react-slider": "^1.0.8",
     "typescript": "^4.0.2"
