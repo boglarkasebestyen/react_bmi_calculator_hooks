@@ -9,7 +9,7 @@ The user can add the height & weight by either using the slider or simply adding
 A **class component-based version** of this project can be viewed [here]().
 
 
-![](https://raw.githubusercontent.com/boglarkasebestyen/react_bmi_calculator/master/public/images/bmi_calc_img.jpg)
+![](https://raw.githubusercontent.com/boglarkasebestyen/react_bmi_calculator/master/public/images/bmi_img.jpg)
 
 ## Live demo of this project at:
 Coming soon
