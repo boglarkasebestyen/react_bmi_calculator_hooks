@@ -1,13 +1,25 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+ :root {
+  --sizeEm: 25em;
+  --sizePx: 1.56em;
+  --blackHex: #000000;
+}
 
 html, body, head {
   font-family: 'Alata', sans-serif, 'Arial';
-  font-size: 100%;
   color: white;
 }
 
 body {
-  background: url(/images/forest.jpg) no-repeat #9bb0a6;
+  background: url(/images/forest.jpg) no-repeat white;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -17,50 +29,56 @@ body {
 #title {
   padding: 0.1em;
   margin: 2em 1em 4.5em 1em;
+  background-color: #D8F24A;
   background-color: rgba(216, 242, 74,0.6);
-  border-radius: 25px;
+  border-radius: 1.56em;
 }
 
-/*h2 inside title*/
+/*h inside title*/
 h1 {
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px var(--blackHex);
 }
 
 /*image div box*/
 #image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; 
-  flex-direction: column; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+      -ms-flex-direction: column; 
+          flex-direction: column; 
   margin: 0 auto;
-  max-width: 26em;
+  max-width: var(--sizeEm);
   height: 28em;
-  border-radius: 25px;
+  border-radius: var(--sizePx);
   border: 1px solid #000;
 }
 
-/*cat images*/
 img {
-  object-fit: cover;
-  border-radius: 25px;
-  max-width: 26em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--sizePx);
+  max-width: var(--sizeEm);
   height: 28em;
 }
 
 #container {
+  background-color: #54a300;
   background-color: rgba(70, 81, 51, 0.8);
-  border-radius: 25px;
-  max-width: 75%;  /*won't go lower than 75%*/
-  min-width: 75%;
-  margin: 1em auto;
+  border-radius: var(--sizePx);
+  max-width: 75%;  
+  margin: 2em auto;
   padding: 1em;
 }
 
 #container form {
+  margin: 1em;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
@@ -74,34 +92,43 @@ img {
 /*height and weight text*/
 .unit p {
   font-size: 1.1em;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px var(--blackHex);
   margin: 0.1em;
 }
 
 #buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .button {
   display: inline-block;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #f9f9f9), to(#e9e9e9));
+  background: -o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
   background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
   background-color: #f9f9f9;
   border: 1px solid #dcdcdc;
   border-radius: 6px;
   color: #666666;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 1px #ffffff;
+          box-shadow: inset 1px #ffffff;
   padding: 0.4em 1em;
-  margin: 0.35em;
-  width: 120px;
+  margin: 0.5em;
+  width: 10em;
   font-family: 'Alata', sans-serif;
   font-size: 0.8em;
   font-weight: bold;
-  text-shadow: 0px 1px 0px #ffffff;
+  text-shadow: 1px #ffffff;
   cursor: pointer;  
 }
 
 .button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #e9e9e9), to(#f9f9f9));
+  background: -o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
   background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
   background-color: #e9e9e9;
 }
@@ -113,12 +140,13 @@ img {
 
 /*results text container*/
 #result-top-text {
+  background-color: #D8F24A;
   background-color: rgba(216, 242, 74, 0.6);
-  border-radius: 25px;
+  border-radius: var(--sizePx);
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.2em;
-  width: 290px;
+  width: 18.125em;
   padding: 0.1em;
 }
 
@@ -127,7 +155,7 @@ img {
   font-size: 1.4em;
   font-family: 'Alata', sans-serif;
   font-weight: bolder;
-  text-shadow: 1px 1px #000000;
+  text-shadow: 1px 1px var(--blackHex);
   text-align: center;
 }
 
@@ -135,25 +163,46 @@ img {
 #bmi-text { 
   text-align: center;
   font-family: 'Alata', sans-serif;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px var(--blackHex);
   font-style: italic;
   font-weight: bold;
-  font-size: 2em;
-  margin-top: 0.9em;
+  font-size: 1.9em;
+  margin-top: 0.8em;
   padding-bottom: 1em;
+
 }
 
 /*body mass index container + text styling*/
 #text {
+  background-color: #D8F24A;
   background-color: rgba(216, 242, 74,0.6);
-  border-radius: 25px;
+  border-radius: var(--sizePx);
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
   text-align: justify;
-  margin-left: auto;
+  margin: 1.5em;
 }
 
+input {
+  width: 4em;
+  margin-left: 0.5em;
+  position: absolute;
+}
+
+.error {
+  font-size: 1em;
+  font-weight: bolder;
+  text-shadow: 1px 1px var(--blackHex);
+  color: #ff3205;
+  position: absolute;
+  margin-left: 4.2em;
+}
+
+.slider {
+  margin-top: 3em;
+  margin-left: 0.4em;
+}
 
 .invisibleChonk {
   display: none;
@@ -162,11 +211,3 @@ img {
 .visibleChonk {
   display: block;
 }
-
-.error {
-  font-size: 1em;
-  font-weight: bolder;
-  text-shadow: 1px 1px #000000;
-  color: #ff3205;
-}
-
