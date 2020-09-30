@@ -6,8 +6,7 @@ The user can add the height & weight by either using the slider or simply adding
 
 **Range slider component source:** https://whoisandy.github.io/react-rangeslider/
 
-A **class component-based version** of this project can be viewed [here]().
-
+A **class component-based version** of this project can be viewed [here](https://github.com/boglarkasebestyen/react_bmi_calculator_class).
 
 ![](https://raw.githubusercontent.com/boglarkasebestyen/react_bmi_calculator_hooks/master/public/images/bmi_img.jpg)
 
