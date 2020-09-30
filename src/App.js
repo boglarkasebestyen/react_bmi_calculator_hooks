@@ -5,8 +5,8 @@
 
 
      const App = () =>  {
-      let [height, setHeight] = useState(0)
-      let [weight, setWeight] = useState(0)
+      let [height, setHeight] = useState("")
+      let [weight, setWeight] = useState("")
       let [heightErr, setHeightErr] = useState("")
       let [weightErr, setWeightErr] = useState("")
       let [bmiValue, setBmiValue] = useState("")
@@ -62,17 +62,21 @@
         }
 
       //limiting number input in height/weight
-      let currentValue = 0   
+      let currentValue = ""   
             if (source === 'height') {
               currentValue = parseInt(height + currentChar)
               if (currentValue > maxHeight) {
                 event.preventDefault()
-              }
+              } 
             } else {
-              currentValue = weight + currentChar
+              currentValue = parseInt(weight + currentChar)
               if (currentValue > maxWeight) {
                 event.preventDefault()
               }
+            }
+
+            if(currentValue === 0) {
+                event.preventDefault()
             }
       }
 
@@ -124,13 +128,12 @@
         return true 
       }
 
-
+      //calc BMI
       const calcBmi = event => {
         if(!validate()) {
           return 
         }
 
-       
         let bmi = (weight / (height/100 * height/100)).toFixed(1)
         let chonks = null
         let resultString = ""
@@ -160,7 +163,7 @@
           default:{}
         }
 
-        // getting random images & avoiding duplicates
+        //getting random images & avoiding duplicates
         let randNum = Math.floor(Math.random() * chonks.length)
         let randChonk = chonks[randNum]
 
@@ -178,11 +181,11 @@
       }
 
 
-      // clear button
+      //clear button
       const clear = event => {
         event.preventDefault()
-        setHeight(0)
-        setWeight(0)
+        setHeight("")
+        setWeight("")
         setBmiValue("")
         setChonkVisibility("invisibleChonk")
         setHeightErr("") 
@@ -203,22 +206,27 @@
                   type="number" 
                   name="height" 
                   step="1" 
+                  placeholder="cm"
                   min={minHeight} 
                   max={maxHeight} 
                   value={height}
                   onChange={handleHeightChange}
                   onKeyPress={handleKeyPress.bind(this, 'height')}
                 />
+               
                 <div className="error">{heightErr}</div>
-                <Slider 
-                  min={minHeight} 
-                  max={maxHeight} 
-                  step={1} 
-                  value={height} 
-                  onChange={handleHeightSliderChange}
-                />                
+               
 
-          
+               <div className="slider">
+                <Slider 
+                    min={minHeight} 
+                    max={maxHeight} 
+                    step={1} 
+                    value={height} 
+                    onChange={handleHeightSliderChange}
+                /> 
+               </div>
+
                 <br />
               
                 <div className="unit">
@@ -235,15 +243,18 @@
                     onChange={handleWeightChange}
                     onKeyPress={handleKeyPress.bind(this, 'weight')}
                  />
-                <div className="error">{weightErr}</div>
-                <Slider
-                  min={minWeight} 
-                  max={maxWeight} 
-                  step={0.5} 
-                  value={weight} 
-                  onChange={handleWeightSliderChange}
-                />
 
+                 <div className="error">{weightErr}</div>
+
+                <div className="slider">
+                 <Slider
+                    min={minWeight} 
+                    max={maxWeight} 
+                    step={0.5} 
+                    value={weight} 
+                    onChange={handleWeightSliderChange}
+                  />
+                 </div>
                
                 <br />
         
@@ -289,14 +300,16 @@
                   The National Institutes of Health (NIH) now defines normal weight, overweight, and obesity according to 
                   BMI rather than the traditional height/weight charts.
                   <ul>
-                    <li>Overweight is a BMI of 25–29.9.</li>
-                    <li>Obesity is a BMI of 30 or more. A very muscular person might have a high BMI without health risks.</li>
+                    <li>Overweight is a BMI of 25–29.9</li>
+                    <li>Obesity is a BMI of 30 or more</li>
                   </ul>
+                  A very muscular person might have a high BMI without health risks.
                 </div>
               </div>
         </div> //container
-      ) //return
+      ) 
     }
+
    
 export default App
 
