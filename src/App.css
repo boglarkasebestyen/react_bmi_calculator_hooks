@@ -19,7 +19,7 @@ html, body, head {
 }
 
 body {
-  background: url(images/forest.jpg) no-repeat white;
+  background: url(/images/forest.jpg) no-repeat white;
   background-size: cover;
   width: 100%;
   height: 100%;
