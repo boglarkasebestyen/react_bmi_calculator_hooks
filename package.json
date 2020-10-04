@@ -2,7 +2,7 @@
   "name": "bmi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://boglarkasebestyen.github.io/react_bmi_calculator_hooks",
+  "homepage": "https://boglarkasebestyen.github.io/react_bmi_calculator_hooks/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
