@@ -10,9 +10,8 @@ A **class component-based version** of this project can be viewed [here](https:/
 
 ![](https://raw.githubusercontent.com/boglarkasebestyen/react_bmi_calculator_hooks/master/public/images/bmi_img.jpg)
 
-## Live demo of this project at:
-Coming soon
-
+## Live demo
+View a live demo of the project [here](https://sb-bmi.netlify.app).
 
 ## Additional info
 
@@ -20,12 +19,6 @@ This project was created with Create React App.
 Please, see the full create-react-app guide [here](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md).
 
 
-## Install
-### `npm install`
-
-
-## Usage
-### `npm start`
 
 
 
